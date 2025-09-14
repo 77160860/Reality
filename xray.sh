@@ -20,20 +20,9 @@ root() {
     fi
 }
 
-# 获取随机端口
-port() {    
-    local port1 port2    
-    port1=$(shuf -i 1024-65000 -n 1)
-    while ss -ltn | grep -q ":$port1"; do
-        port1=$(shuf -i 1024-65000 -n 1)
-    done    
-    port2=$(shuf -i 1024-65000 -n 1)
-    while ss -ltn | grep -q ":$port2" || [ "$port2" -eq "$port1" ]; do
-        port2=$(shuf -i 1024-65000 -n 1)
-    done
-    
-    PORT1=$port1
-    PORT2=$port2    
+# 固定端口
+    PORT1=443
+    PORT2=8443
 }
 
 # 配置和启动Xray
@@ -42,11 +31,11 @@ xray() {
     bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
     # 生成所需参数
     path=$(openssl rand -hex 8)
-    shid=$(openssl rand -hex 8)
-    uuid=$(/usr/local/bin/xray uuid)
+    shid=123abc
+    uuid=8c3f2083-62e8-56ad-fe13-872a266a8ed8
     X25519Key=$(/usr/local/bin/xray x25519)
     PrivateKey=$(echo "$X25519Key" | grep -i '^PrivateKey:' | awk '{print $2}')
-    PublicKey=$(echo "$X25519Key" | grep -E '^(PublicKey|Password):' | awk '{print $2}')
+    PublicKey=Qsm7FuVopFtttQD51-22DpjRDP1gpXI4fyBNY97xt28
 
     # 配置config.json
     cat >/usr/local/etc/xray/config.json <<EOF
