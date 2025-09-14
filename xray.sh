@@ -32,11 +32,11 @@ xray() {
     bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
     # 生成所需参数
     path=%2F9ba785a7a9ba6c5c
-    shid=$(openssl rand -hex 8)
+    shid=617b672da45eab9e
     uuid=8c3f2083-62e8-56ad-fe13-872a266a8ed8
     X25519Key=$(/usr/local/bin/xray x25519)
-    PrivateKey=$(echo "$X25519Key" | grep -i '^PrivateKey:' | awk '{print $2}')
-    PublicKey=$(echo "$X25519Key" | grep -E '^(PublicKey|Password):' | awk '{print $2}')
+    PrivateKey=kPfnp_9YBJUrlkybi57UzY41LZssDDYcctqE1sZb50g
+    PublicKey=92BHliUte8CWZWh1wHO3VObJt35qCHtejzZEwPtiFhU
 
     # 配置config.json
     cat >/usr/local/etc/xray/config.json <<EOF
