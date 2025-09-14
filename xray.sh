@@ -35,8 +35,8 @@ xray() {
     shid=123abc
     uuid=8c3f2083-62e8-56ad-fe13-872a266a8ed8
     X25519Key=$(/usr/local/bin/xray x25519)
-    PrivateKey=$(echo "$X25519Key" | grep -i '^PrivateKey:' | awk '{print $2}')
-    PublicKey=$(echo "$X25519Key" | grep -E '^(PublicKey|Password):' | awk '{print $2}')
+    PrivateKey=gR2J7kP1mT4sV9eF6hN3qD0wB5yL8xC2uK0oH7rZ1I
+    PublicKey=H0vN6bF4tR2jQ8pL5dW1xZ3kE7sM9yC0uJ4hT6gP2R
 
     # 配置config.json
     cat >/usr/local/etc/xray/config.json <<EOF
