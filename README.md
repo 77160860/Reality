@@ -4,7 +4,7 @@
 
 ## 一键脚本
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/77160860/Realty/main/Xray.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/77160860/Reality/main/Xray.sh)
 ```
 
 ## Xray指令
