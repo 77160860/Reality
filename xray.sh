@@ -32,7 +32,7 @@ xray() {
     bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
     # 生成所需参数
     path=%2F9ba785a7a9ba6c5c
-    shid=123abc
+    shid=%2F9ba785a7a9ba6c5c
     uuid=8c3f2083-62e8-56ad-fe13-872a266a8ed8
     X25519Key=$(/usr/local/bin/xray x25519)
     PrivateKey=gR2J7kP1mT4sV9eF6hN3qD0wB5yL8xC2uK0oH7rZ1I
