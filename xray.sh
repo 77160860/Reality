@@ -22,8 +22,8 @@ root() {
 
 # 固定端口
 port() {       
-    PORT1=443
-    PORT2=8443
+    PORT1=8443
+    PORT2=2053
 }
 
 # 配置和启动Xray
